@@ -26,19 +26,15 @@ CREATE TABLE customer_dim (
 );
 
 
-CREATE TABLE product_dim   (prod_sk  NUMBER GENERATED AS IDENTITY PRIMARY KEY,
-                            prod_id  VARCHAR2(20), prod_name VARCHAR2(60), prod_type VARCHAR2(12));
+CREATE TABLE product_dim   (prod_sk  NUMBER GENERATED AS IDENTITY PRIMARY KEY, prod_id  VARCHAR2(20), prod_name VARCHAR2(60), prod_type VARCHAR2(12));
 
-CREATE TABLE branch_dim    (branch_sk NUMBER GENERATED AS IDENTITY PRIMARY KEY,
-                            branch_id VARCHAR2(10), branch_name VARCHAR2(60), region VARCHAR2(20));
+CREATE TABLE branch_dim    (branch_sk NUMBER GENERATED AS IDENTITY PRIMARY KEY, branch_id VARCHAR2(10), branch_name VARCHAR2(60), region VARCHAR2(20));
 
-CREATE TABLE channel_dim   (chan_sk   NUMBER GENERATED AS IDENTITY PRIMARY KEY,
-                            chan_name VARCHAR2(20));   -- Branch / Online / Mobile / Call
+CREATE TABLE channel_dim   (chan_sk   NUMBER GENERATED AS IDENTITY PRIMARY KEY, chan_name VARCHAR2(20));   -- Branch / Online / Mobile / Call
 
-CREATE TABLE risk_dim      (risk_sk   NUMBER GENERATED AS IDENTITY PRIMARY KEY,
-                            risk_cd   VARCHAR2(10), risk_name VARCHAR2(40));
+CREATE TABLE risk_dim      (risk_sk   NUMBER GENERATED AS IDENTITY PRIMARY KEY, risk_cd   VARCHAR2(10), risk_name VARCHAR2(40));
 
-/
+
 CREATE TABLE bank_txn_fact (          -- deposits / withdrawals / transfers
   txn_id        NUMBER GENERATED AS IDENTITY PRIMARY KEY,
   date_sk       NUMBER,
